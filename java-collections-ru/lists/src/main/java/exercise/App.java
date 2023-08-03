@@ -10,7 +10,7 @@ import java.util.List;
 public class App{
     public static boolean scrabble(String symbols, String word){
         String[] symbolsArr = symbols.split("");
-        List<String> symbolsList = Arrays.asList(symbolsArr);
+        List<String> symbolsList = new ArrayList<>(Arrays.asList(symbolsArr));
         for(int i = 0; i < word.length(); i++){
             String currentSymbol = word.substring(i, i + 1).toLowerCase();
             if(!symbolsList.contains(currentSymbol)){
@@ -19,7 +19,6 @@ public class App{
             symbolsList.remove(currentSymbol);
         }
         return true;
-
     }
 
 }
